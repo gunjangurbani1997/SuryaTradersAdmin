@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="reviewModel"
+            type="com.example.suryatradersadmin.viewmodel.ReviewViewModel" />
+        <variable
+            name="reviewInterface"
+            type="com.example.suryatradersadmin.adapter.ReviewAdapter.ReviewInterface" />
+        <variable
+            name="review"
+            type="com.example.suryatradersadmin.model.Review" />
+
+    </data>
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ReviewFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/review_recycler_view"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:clipToPadding="false"
+        tools:listitem="@layout/review_row"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="@dimen/_235sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColorHint="#707070"
+            android:textColor="@color/black"
+            android:padding="@dimen/_5sdp"
+            android:hint="Write a message..."
+            android:background="@drawable/background_input"
+            android:id="@+id/reviewTextArea"
+            android:layout_gravity="bottom"
+            android:maxHeight="80dp"
+            android:text="@{reviewModel.reviewTextArea}"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:clickable="true"
+            android:padding="@dimen/_4sdp"
+            android:layout_toRightOf="@+id/reviewTextArea"
+            android:layout_gravity="bottom"
+            android:text="Send"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/button_shape"
+            android:id="@+id/sendButton"
+            android:layout_toEndOf="@+id/reviewTextArea"
+            android:focusable="true"
+            android:layout_marginEnd="@dimen/_5sdp" />
+    </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empTypeLL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:text="Employee Name"
+        android:textSize="15sp"
+        />
+    <Spinner
+        android:id="@+id/empSpinner"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:background="@drawable/spinner_arrow"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:spinnerMode="dropdown"
+        />
+
+</LinearLayout>

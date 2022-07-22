@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/orderFragment">
+
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.example.suryatradersadmin.views.CustomerFragment"
+        android:label="Customers"
+        tools:layout="@layout/fragment_customer" >
+        <action
+            android:id="@+id/action_customerFragment_to_customerOrderDetailFragment"
+            app:destination="@id/customerOrderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.suryatradersadmin.views.OrderFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_orderFragment_to_subOrderFragment"
+            app:destination="@id/subOrderFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.example.suryatradersadmin.views.EmployeeFragment"
+        android:label="Employee"
+        tools:layout="@layout/fragment_employee" />
+
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.example.suryatradersadmin.views.AdminFragment"
+        android:label="Admin"
+        tools:layout="@layout/fragment_admin" />
+    <fragment
+        android:id="@+id/customerOrderDetailFragment"
+        android:name="com.example.suryatradersadmin.views.CustomerOrderDetailFragment"
+        android:label="Order Details"
+        tools:layout="@layout/fragment_customer_order_detail" >
+        <argument
+            android:name="customerId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/subOrderFragment"
+        android:name="com.example.suryatradersadmin.views.SubOrderFragment"
+        android:label="Order Details" >
+        <argument
+            android:name="customerId"
+            app:argType="integer" />
+        <argument
+            android:name="orderId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_subOrderFragment_to_uploadInvoiceFragment"
+            app:destination="@id/uploadInvoiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.suryatradersadmin.views.ChangePasswordFragment"
+        android:label="Change Password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.suryatradersadmin.views.ReviewFragment"
+        android:label="Reviews" >
+        <argument android:name="orderId" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadInvoiceFragment"
+        android:name="com.example.suryatradersadmin.views.UploadInvoiceFragment"
+        android:label="fragment_upload_invoice"
+        tools:layout="@layout/fragment_upload_invoice" />
+</navigation>

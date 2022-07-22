@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.view.Gravity"/>
+        <variable
+            name="review"
+            type="com.example.suryatradersadmin.model.Review" />
+        <variable
+            name="reviewInterface"
+            type="com.example.suryatradersadmin.adapter.ReviewAdapter.ReviewInterface" />
+
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:strokeColor="@color/orange"
+        app:cardElevation="@dimen/_2sdp"
+        app:rippleColor="@color/dim_org_end"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="@{review.addedByType.equals(`admin`)?Gravity.RIGHT:Gravity.LEFT}"
+            >
+
+            <TextView
+                android:id="@+id/added_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(review.addedOn)}"
+                android:textSize="12sp"
+                android:textColor="#707070"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_gravity="right"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                />
+            <TextView
+                android:id="@+id/added_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(review.addedBy)}"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                />
+            <TextView
+                android:id="@+id/remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(review.remarks)}"
+                android:textSize="15sp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/black"
+                android:layout_gravity="right"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

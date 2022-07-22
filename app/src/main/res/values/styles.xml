@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<resources>
+  <style parent="Theme.MaterialComponents.Light.DarkActionBar" name="AppTheme">
+    <item name="colorPrimary">@color/orange</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/orange</item>
+  </style>
+
+  <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/orange</item>
+  </style>
+
+
+
+  <!-- <style parent="Theme.MaterialComponents.Light.NoActionBar" name="SplashTheme">
+       <item name="android:windowBackground">@drawable/suryalogo</item>
+   </style>-->
+
+  <style parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
+  <style parent="ThemeOverlay.MaterialComponents.Light" name="AppTheme.PopupOverlay"/>
+
+
+</resources>

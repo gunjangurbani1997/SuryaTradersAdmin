@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="admin"
+            type="com.example.suryatradersadmin.model.Admin" />
+
+        <variable
+            name="adminViewModel"
+            type="com.example.suryatradersadmin.viewmodel.AdminViewModel" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/suryatradersbg"
+            >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_127sdp"
+                    android:src="@drawable/suryalogo"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_50sdp"/>
+
+
+            <TextView
+                android:id="@+id/create_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="LOG IN"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24sp"/>
+
+
+            <EditText
+                android:id="@+id/admin_login_id"
+                android:background="@drawable/shape"
+                android:text="@={adminViewModel.mobileNo}"
+                android:layout_width="match_parent"
+                android:textSize="15sp"
+                android:padding="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Mobile Number"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_baseline_smartphone_24"
+                android:drawablePadding="@dimen/_30sdp"
+                android:textColor="#707070"
+                android:textColorHint="#707070"/>
+
+
+            <EditText
+                android:id="@+id/customer_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="Password"
+                android:background="@drawable/shape"
+                app:passwordToggleEnabled="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:textSize="15sp"
+                android:textColorHint="#707070"
+                android:textColor="#707070"
+                android:text="@={adminViewModel.password}"
+                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="@dimen/_30sdp"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_baseline_lock_24" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="Log In"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:background="@drawable/button_shape"
+                />
+
+            <TextView
+                android:id="@+id/failed_identity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="Invalid identity"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/orange"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+    </FrameLayout>
+
+</layout>

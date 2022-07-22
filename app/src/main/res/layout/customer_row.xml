@@ -1,0 +1,235 @@
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="customerOrderDetailInterface"
+            type="com.example.suryatradersadmin.adapter.CustomerAdapter.CustomerOrderDetailInterface" />
+        <variable
+            name="customer"
+            type="com.example.suryatradersadmin.model.Customer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:strokeColor="@color/orange"
+        app:cardElevation="@dimen/_2sdp"
+        android:onClick="@{()->customerOrderDetailInterface.onCustomerClick(customer.customerId)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            android:id="@+id/parentLayout">
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Name:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/customerMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customerName"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Mobile:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/customerCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customerMobile"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Company:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/customerCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customerCompany"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Category:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/customerAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customerCategory"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Address:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize_16"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_alignTop="@+id/customerCategory"
+                android:layout_toRightOf="@+id/customerCategory"
+                android:layout_toEndOf="@+id/customerCategory"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/customerNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:maxLines="1"
+                    android:padding="@dimen/_2sdp"
+                    android:ellipsize="end"
+                    android:text="@{customer.customerFirstName+` `+customer.customerLastName}"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView
+                    android:id="@+id/customerMobileTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/customerNameTextView"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{customer.customerMobileNo}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView
+                    android:id="@+id/customerCompanyTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/customerMobileTextView"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:text="@{customer.customerCompany}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView
+                    android:id="@+id/customerCategoryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_2sdp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/customerCompanyTextView"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:text="@{customer.customerCategory}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/textSize_16"/>
+
+                <TextView
+                    android:id="@+id/customerAddressTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_below="@+id/customerCategoryTextView"
+                    android:text="@{customer.customerAddress}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/textSize_16"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center"
+                android:layout_below="@+id/relativeLayout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/customerApproveButton"
+                    android:background="@drawable/button_shape"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="APPROVE"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:onClick="@{()->customerOrderDetailInterface.approveCustomer(customer.customerMobileNo,customer.customerCategory)}"/>
+
+                <Space
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/customerDisapproveButton"
+                    android:background="@drawable/button_shape"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="DELETE"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="@{()->customerOrderDetailInterface.deleteCustomer(customer.customerId)}"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

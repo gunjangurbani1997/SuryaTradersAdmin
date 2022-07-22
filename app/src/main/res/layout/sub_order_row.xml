@@ -1,0 +1,250 @@
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="subOrders"
+            type="com.example.suryatradersadmin.model.SubOrders" />
+
+        <variable
+            name="subOrderInterface"
+            type="com.example.suryatradersadmin.adapter.SubOrderAdapter.SubOrderInterface" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:strokeColor="@color/orange"
+        app:cardElevation="@dimen/_2sdp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
+            >
+
+            <TextView
+                android:id="@+id/subOrderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:padding="5dp"
+                android:text="Product Code:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize_16"/>
+            <TextView
+                android:id="@+id/subOrderProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginStart="2dp"
+                android:padding="5dp"
+                android:layout_below="@+id/subOrderId"
+                android:textStyle="bold"
+                android:text="Product Name:"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize_16"/>
+
+
+            <TextView
+                android:id="@+id/subOrderColor"
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Color:"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize_16"
+                android:padding="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_below="@+id/subOrderProductName"
+                android:textColor="@android:color/black"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/subOrderQuantity"
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Quantity"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize_16"
+                android:padding="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_below="@+id/subOrderColor"
+                android:textColor="@android:color/black"
+                android:layout_alignParentStart="true" />
+
+
+            <TextView
+                android:id="@+id/subOrderProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:padding="5dp"
+                android:layout_below="@+id/subOrderQuantity"
+                android:text="Product Price"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize_16"/>
+
+
+            <TextView
+                android:id="@+id/subOrderProductTotal"
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_10"
+                android:padding="5dp"
+                android:textSize="@dimen/textSize_16"
+                android:text="Total:"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_below="@+id/subOrderProductPrice"
+                android:layout_alignParentStart="true"/>
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignTop="@+id/subOrderColor"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_toEndOf="@+id/subOrderColor"
+                android:layout_toRightOf="@+id/subOrderColor"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/subOrdersProductCodeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="@{String.valueOf(subOrders.productCode)}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textSize_16" />
+
+                <TextView
+                    android:id="@+id/subOrderProductNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:layout_below="@+id/subOrdersProductCodeTextView"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@{subOrders.productName}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textSize_16" />
+
+                <TextView
+                    android:id="@+id/subOrderColorNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:layout_below="@+id/subOrderProductNameTextView"
+                    android:text="@{String.valueOf(subOrders.colorName)}"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textSize_16" />
+
+                <TextView
+                    android:id="@+id/subOrderQuantityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subOrderColorNameTextView"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:text="@{String.valueOf(subOrders.quantity)+` `+String.valueOf(subOrders.unit)}"
+                    android:textSize="@dimen/textSize_16" />
+
+                <TextView
+                    android:id="@+id/subOrderProductPriceTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:layout_below="@+id/subOrderQuantityTextView"
+                    android:text="@{`₹ `+String.valueOf(subOrders.price)+`/`+String.valueOf(subOrders.unit)}"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/textSize_16" />
+                <TextView
+                    android:id="@+id/subOrderProductTotalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subOrderProductPriceTextView"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:text="@{`₹`+String.valueOf(subOrders.productPriceWithGst)+` (incl. GST)`}"
+                    android:textSize="@dimen/textSize_16" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_4sdp">
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/orderStatusAssignButton"
+                    android:layout_width="@dimen/_400sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:text="Assign Order"
+                    android:background="@drawable/button_shape_5sdp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_below="@+id/orderEmployeeStatusTextView"
+                    android:onClick="@{()->subOrderInterface.assignEmployee(subOrders.subOrderId)}"
+
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

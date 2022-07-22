@@ -1,0 +1,113 @@
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="employee"
+            type="com.example.suryatradersadmin.model.Employee" />
+        <variable
+            name="employeeInterface"
+            type="com.example.suryatradersadmin.adapter.EmployeeAdapter.EmployeeInterface" />
+    </data>
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:strokeColor="@color/orange"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        >
+
+        <ImageView
+            android:id="@+id/employeePersonIcon"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:contentDescription="@null"
+            card_view:srcCompat="@drawable/ic_baseline_person_24"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/employeePhoneIcon"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:contentDescription="@null"
+            card_view:srcCompat="@drawable/ic_baseline_phone_android_24"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/employeePersonIcon"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:id="@+id/employeeEditIcon"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:contentDescription="@null"
+            card_view:srcCompat="@drawable/ic_baseline_edit_24"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/employeePhoneIcon"
+            android:layout_alignParentStart="true"
+            android:onClick="@{()->employeeInterface.showModalForEmployeeTypeUpdate(employee.employeePhoneNo,employee.employeeLevel)}"/>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_alignTop="@+id/employeePersonIcon"
+            android:layout_toRightOf="@+id/employeePersonIcon"
+            android:layout_toEndOf="@+id/employeePersonIcon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/employeeNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@{employee.employeeFirstName}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize_16"/>
+
+            <TextView
+                android:id="@+id/employeePhoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employeeNameTextView"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@{employee.employeePhoneNo}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/textSize_16"/>
+
+            <TextView
+                android:id="@+id/employeeLevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employeePhoneTextView"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@{employee.employeeLevel}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/textSize_16"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+</layout>
